@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto News & Motivation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0d47a1;
+            --secondary: #00c853;
+            --accent: #ffab00;
+            --dark: #263238;
+            --light: #eceff1;
+            --text-color: #212121;
+            --bg-color: #f5f5f5;
+            --card-bg: #ffffff;
+            --card-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+        }
+
+        * {
+            box-sizing: border-box;
+            transition: all 0.3s ease-in-out;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.8rem;
+        }
+
+        nav {
+            margin-top: 1rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .section {
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+            color: var(--primary);
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background-color: var(--accent);
+            border-radius: 2px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: var(--card-shadow);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 1rem;
+            flex-grow: 1;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            margin: 0.5rem 0;
+            color: var(--primary);
+        }
+
+        .card-excerpt {
+            color: var(--dark);
+            margin-bottom: 1rem;
+        }
+
+        .card-date {
+            font-size: 0.9rem;
+            color: var(--secondary);
+        }
+
+        footer {
+            background-color: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 1.5rem 0;
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Crypto News & Motivation</h1>
+        <nav>
+            <a href="#news">Crypto News</a>
+            <a href="#speeches">Speeches</a>
+            <a href="#stories">Stories</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div id="news" class="section">
+            <h2 class="section-title">🔥 Trending Crypto News (30)</h2>
+            <div class="grid">
+                <script>
+                    const newsData = [
+                        ["Bitcoin Surges 12% Overnight", "https://cryptologos.cc/logos/bitcoin-btc-logo.png?v=026"],
+                        ["Ethereum 2.0 Stability Test Completed", "https://cryptologos.cc/logos/ethereum-eth-logo.png?v=026"],
+                        ["Dogecoin Breaks Past $0.10 Mark", "https://cryptologos.cc/logos/dogecoin-doge-logo.png?v=026"],
+                        ["Solana Experiences Record Transaction Speed", "https://cryptologos.cc/logos/solana-sol-logo.png?v=026"],
+                        ["Cardano Announces New Smart Contract Partnership", "https://cryptologos.cc/logos/cardano-ada-logo.png?v=026"],
+                        ["Polygon Integrates With Major Payment Provider", "https://cryptologos.cc/logos/polygon-matic-logo.png?v=026"],
+                        ["Binance Launches New NFT Marketplace", "https://cryptologos.cc/logos/binance-coin-bnb-logo.png?v=026"],
+                        ["Litecoin Halving Event Approaches", "https://cryptologos.cc/logos/litecoin-ltc-logo.png?v=026"],
+                        ["Crypto Market Gains $100B in 24 Hours", "https://cryptologos.cc/logos/bitcoin-btc-logo.png?v=026"],
+                        ["SEC Delays ETF Decision Again", "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/US_Securities_and_Exchange_Commission_Seal.svg/800px-US_Securities_and_Exchange_Commission_Seal.svg.png"],
+                        ["Shiba Inu Token Now Accepted by Major Retailer", "https://cryptologos.cc/logos/shiba-inu-shib-logo.png?v=026"],
+                        ["Avalanche Collaborates with Chainlink", "https://cryptologos.cc/logos/avalanche-avax-logo.png?v=026"],
+                        ["Ripple Wins Partial Victory in Court Case", "https://cryptologos.cc/logos/xrp-xrp-logo.png?v=026"],
+                        ["Web3 Gaming Gains Momentum Worldwide", "https://www.pngall.com/wp-content/uploads/5/Web3-PNG-Image-HD.png"],
+                        ["Tether Reports Full Reserve Transparency", "https://cryptologos.cc/logos/tether-usdt-logo.png?v=026"],
+                        ["Bitcoin ETFs Gain Global Popularity", "https://cryptologos.cc/logos/bitcoin-btc-logo.png?v=026"],
+                        ["Crypto Hacks Decline Significantly in 2025", "https://cdn-icons-png.flaticon.com/512/3135/3135715.png"],
+                        ["DeFi Platforms Attract Institutional Investors", "https://cryptologos.cc/logos/uniswap-uni-logo.png?v=026"],
+                        ["Central Banks Explore CBDC Pilots", "https://upload.wikimedia.org/wikipedia/commons/5/5b/Bank_of_England_logo.svg"],
+                        ["India Plans New Crypto Tax Policy", "https://upload.wikimedia.org/wikipedia/commons/8/8f/Income_Tax_India_Logo.png"],
+                        ["El Salvador Mines Bitcoin with Volcano Energy", "https://upload.wikimedia.org/wikipedia/commons/8/86/El_Salvador_coat_of_arms.svg"],
+                        ["Robinhood Expands Crypto Trading in Europe", "https://cryptologos.cc/logos/robinhood-markets-logo.png"],
+                        ["Arbitrum Introduces Governance Upgrade", "https://cryptologos.cc/logos/arbitrum-arb-logo.png?v=026"],
+                        ["US Lawmakers Propose Stablecoin Bill", "https://upload.wikimedia.org/wikipedia/commons/6/6e/Seal_of_the_United_States_Congress.svg"],
+                        ["FTX Bankruptcy Payouts Begin", "https://cryptologos.cc/logos/ftx-token-ftt-logo.png?v=026"],
+                        ["Telegram Adds Crypto Wallet Feature", "https://upload.wikimedia.org/wikipedia/commons/8/83/Telegram_2019_Logo.svg"],
+                        ["Chainlink Enables Real World Asset Feeds", "https://cryptologos.cc/logos/chainlink-link-logo.png?v=026"],
+                        ["Crypto Conferences Attract Record Crowds", "https://cdn-icons-png.flaticon.com/512/181/181549.png"],
+                        ["Bitfinex Partners With Tether On AI", "https://cryptologos.cc/logos/bitfinex-logo.png"]
+                    ];
+
+                    newsData.forEach(([title, img], i) => {
+                        document.write(`
+                            <div class="card">
+                                <img src="${img}" alt="${title}">
+                                <div class="card-content">
+                                    <h3 class="card-title">${title}</h3>
+                                    <p class="card-excerpt">Detailed report on: ${title} and its effect on the global crypto market.</p>
+                                    <span class="card-date">14 July 2025</span>
+                                </div>
+                            </div>
+                        `);
+                    });
+                </script>
+            </div>
+        </div>
+
+        <div id="speeches" class="section">
+            <h2 class="section-title">🎤 Motivational Speeches</h2>
+            <div class="grid">
+                <div class="card">
+                    <img src="https://placehold.co/600x400?text=Believe+in+Yourself" alt="Speech">
+                    <div class="card-content">
+                        <h3 class="card-title">Believe in Yourself</h3>
+                        <p class="card-excerpt">Empowering message to inspire self-confidence and action in your goals.</p>
+                        <span class="card-date">14 July 2025</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="stories" class="section">
+            <h2 class="section-title">📚 Motivational Stories (10)</h2>
+            <div class="grid">
+                <div class="card">
+                    <img src="https://placehold.co/600x400?text=Story+of+Grit" alt="Story">
+                    <div class="card-content">
+                        <h3 class="card-title">Never Give Up</h3>
+                        <p class="card-excerpt">A young entrepreneur fails 7 times before creating a million-dollar company. Perseverance is key.</p>
+                        <span class="card-date">14 July 2025</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Crypto News & Motivation. All rights reserved.</p>
+    </footer>
+</body>
+</html>
